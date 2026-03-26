@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello Python – Aprenda Python no CIlt</title>
+    <meta
+      name="description"
+      content="Projeto de extensão gratuito que ensina Python para alunos do CIlt."
+    />
+    <link rel="icon" type="image/png" href="logo_teal.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="hero" id="hero">
+      <!-- decorative blobs -->
+      <div class="hero-blob hb-top" aria-hidden="true"></div>
+      <div class="hero-blob hb-left" aria-hidden="true"></div>
+      <div class="hero-blob hb-right" aria-hidden="true"></div>
+      <!-- dot grid -->
+      <div class="dot-grid" aria-hidden="true"></div>
+
+      <div class="hero-c">
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span class="tag-dot"></span>
+            Projeto de Extensão · CIlt × Universidade
+          </div>
+
+          <h1>
+            Aprenda<br />
+            <em>Python</em><br />
+            do zero ao<br />
+            <span class="h1-under">primeiro projeto</span>
+          </h1>
+
+          <p class="hero-desc">
+            Programa <strong>100% gratuito</strong> para alunos do CIlt. Sem
+            experiência? Sem problema — comece agora.
+          </p>
+
+          <div class="hero-btns">
+            <a href="#certificado" class="btn-primary">
+              Quero meu certificado 🏆
+            </a>
+            <a href="#como-funciona" class="btn-outline"> Como funciona → </a>
+          </div>
+
+          <!-- <div class="hero-stats">
+            <div class="hs-avatars">
+              <div
+                class="hsa"
+                style="background: linear-gradient(135deg, #B3EDDC, #60B9AF)"
+              >
+                A
+              </div>
+              <div
+                class="hsa"
+                style="background: linear-gradient(135deg, #FFE5B4, #1A1A1A)"
+              >
+                B
+              </div>
+              <div
+                class="hsa"
+                style="background: linear-gradient(135deg, #1A1A1A, #60B9AF)"
+              >
+                C
+              </div>
+              <div class="hsa hsa-more">+117</div>
+            </div>
+            <div class="hs-text">
+              <strong>120 alunos</strong> já aprenderam Python
+              <div class="hs-stars">★★★★★ <span>98% satisfação</span></div>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <!-- Terminal card -->
+          <div class="terminal">
+            <div class="term-bar">
+              <div class="term-dots">
+                <span class="td-r"></span><span class="td-y"></span
+                ><span class="td-g"></span>
+              </div>
+              <span class="term-file">hello.py</span>
+              <span class="term-run">▶ Run</span>
+            </div>
+            <div class="term-body">
+              <div class="ln">1<br />2<br />3<br />4<br />5<br />6<br />7</div>
+              <div class="code">
+                <div class="cl-comment"># 🐍 Bem-vindo ao Hello Python!</div>
+                <div class="cl-blank"></div>
+                <div>
+                  <span class="ck">nome</span> <span class="cop">=</span>
+                  <span class="cf">input</span><span class="cb">(</span
+                  ><span class="cs">"Seu nome: "</span><span class="cb">)</span>
+                </div>
+                <div class="cl-blank"></div>
+                <div>
+                  <span class="ck">for</span> i <span class="cop">in</span>
+                  <span class="cf">range</span><span class="cb">(</span
+                  ><span class="cn">3</span><span class="cb">)</span
+                  ><span class="cop">:</span>
+                </div>
+                <div class="cl-indent">
+                  <span class="cf">print</span><span class="cb">(</span
+                  ><span class="cs"
+                    >f"Olá, <span class="ci">{nome}</span>! 👋"</span
+                  ><span class="cb">)</span>
+                </div>
+                <div class="cl-blank"></div>
+              </div>
+            </div>
+            <div class="term-out">
+              <span class="out-lbl">OUTPUT</span>
+              <div class="out-lines">
+                <div class="out-line">
+                  Olá, Você! 👋<span class="cursor">▋</span>
+                </div>
+                <div class="out-line" style="opacity: 0.55">Olá, Você! 👋</div>
+                <div class="out-line" style="opacity: 0.25">Olá, Você! 👋</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating cards -->
+          <div class="float-card fc-1">
+            <span class="fc-ico">🏆</span>
+            <div>
+              <strong>Certificado emitido!</strong
+              ><small>Módulo 1 concluído</small>
+            </div>
+          </div>
+          <div class="float-card fc-2">
+            <span class="fc-ico">⚡</span>
+            <div><strong>+50 XP</strong><small>Exercício completo</small></div>
+          </div>
+          <div class="float-card fc-3">
+            <div class="fc-prog-label">
+              <span>📈 Progresso</span>
+              <span class="fc-pct">37%</span>
+            </div>
+            <div class="fc-track">
+              <div class="fc-fill" style="width: 37%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-sec" id="missao">
+      <div class="c">
+        <header class="sec-hd reveal">
+          <div class="eyebrow">🎯 Por que Hello Python?</div>
+          <h2>Tudo que você precisa<br />para aprender Python</h2>
+          <p>
+            Não importa se você nunca programou. O Hello Python foi feito do
+            zero para você.
+          </p>
+        </header>
+        <div class="why-grid">
+          <div class="why-card reveal wc-green">
+            <div class="wc-icon">🐍</div>
+            <h3>Aprenda Python</h3>
+            <p>
+              Do primeiro <code>print()</code> até loops, funções e estruturas de
+              dados — no seu ritmo.
+            </p>
+            <a href="#conteudo" class="wc-link">Ver currículo →</a>
+          </div>
+          <div class="why-card reveal wc-brown">
+            <div class="wc-icon">🎮</div>
+            <h3>Projetos Reais</h3>
+            <p>
+              Quiz de inglês, jogo da adivinhação, snake game — cada módulo
+              termina com algo que você pode mostrar.
+            </p>
+            <a href="#projetos" class="wc-link">Ver projetos →</a>
+          </div>
+          <div class="why-card reveal wc-cream">
+            <div class="wc-icon">🏆</div>
+            <h3>Certificado Grátis</h3>
+            <p>
+              Conclua os módulos, apresente seu projeto final e ganhe um
+              certificado ótimo para o currículo.
+            </p>
+            <a href="#certificado" class="wc-link">Pegar certificado →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps-sec" id="como-funciona">
+      <div class="c">
+        <header class="sec-hd reveal">
+          <div class="eyebrow">⚙️ Como funciona</div>
+          <h2>Três passos para o seu certificado</h2>
+        </header>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-num">01</div>
+            <div class="step-ico">📝</div>
+            <h3>Inscreva-se</h3>
+            <p>
+              Preencha o formulário. Gratuito e exclusivo para alunos do CIlt.
+              Sem pré-requisitos.
+            </p>
+          </div>
+          <div class="step-arrow reveal" aria-hidden="true">→</div>
+          <div class="step reveal">
+            <div class="step-num">02</div>
+            <div class="step-ico">🧑‍💻</div>
+            <h3>Aprenda & Evolua</h3>
+            <p>
+              Complete os módulos em seu ritmo com aulas, exercícios e desafios
+              gamificados.
+            </p>
+          </div>
+          <div class="step-arrow reveal" aria-hidden="true">→</div>
+          <div class="step step-accent reveal">
+            <div class="step-num">03</div>
+            <div class="step-ico">🏆</div>
+            <h3>Pegue o Certificado</h3>
+            <p>
+              Entregue seu projeto final e receba seu certificado de conclusão.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-sec" id="sobre">
+      <div class="c">
+        <div class="alt-row reveal">
+          <div class="alt-visual">
+            <div class="av-card av-green">
+              <div class="av-wbar"><span></span><span></span><span></span></div>
+              <div class="av-badges">
+                <div class="avb avb-g">✓ &nbsp;Variáveis &amp; Tipos</div>
+                <div class="avb avb-g">✓ &nbsp;Loops &amp; Condicionais</div>
+                <div class="avb avb-y">◐ &nbsp;Funções</div>
+                <div class="avb avb-m">○ &nbsp;Estruturas de Dados</div>
+              </div>
+              <div class="av-xp">
+                <div class="avx-top">
+                  <span>🔥 240 XP ganhos</span><span>Nível 3 de 8</span>
+                </div>
+                <div class="avx-track">
+                  <div class="avx-fill" style="width: 37%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="alt-text">
+            <div class="eyebrow">📚 Conteúdo</div>
+            <h2>Aprenda Python de forma unificada com inglês</h2>
+            <p>
+              Cada módulo é uma missão: você completa, ganha XP e desbloqueia o
+              próximo nível. Motivação do começo ao fim.
+            </p>
+            <ul class="check-list">
+              <li>
+                🌱
+                <div>
+                  <strong>Comece do zero</strong> — sem experiência anterior
+                </div>
+              </li>
+              <li>
+                🎯
+                <div><strong>Exercícios práticos</strong> a cada aula</div>
+              </li>
+              <li>
+                🏅
+                <div>
+                  <strong>Conquistas e XP</strong> que mantêm você motivado
+                </div>
+              </li>
+              <li>
+                🤝
+                <div><strong>Instrutores disponíveis</strong> para dúvidas</div>
+              </li>
+            </ul>
+            <a href="#conteudo" class="btn-text">Ver currículo completo →</a>
+          </div>
+        </div>
+
+        <div class="alt-row alt-rev reveal">
+          <div class="alt-visual">
+            <div class="av-card av-brown">
+              <div class="av-wbar"><span></span><span></span><span></span></div>
+              <div class="proj-list">
+                <div class="pl-item pl-done">
+                  <span class="pl-ico">🐍</span>
+                  <div class="pl-info">
+                    <strong>Snake Game</strong><span>Pygame · Classes</span>
+                  </div>
+                  <span class="pl-tag pl-t-done">Concluído</span>
+                </div>
+                <div class="pl-item pl-wip">
+                  <span class="pl-ico">🧠</span>
+                  <div class="pl-info">
+                    <strong>Quiz de Inglês</strong><span>Listas · Dicts</span>
+                  </div>
+                  <span class="pl-tag pl-t-wip">Em andamento</span>
+                </div>
+                <div class="pl-item pl-lock">
+                  <span class="pl-ico">🔢</span>
+                  <div class="pl-info">
+                    <strong>Calculadora</strong><span>Funções · Input</span>
+                  </div>
+                  <span class="pl-tag pl-t-lock">🔒 Bloqueado</span>
+                </div>
+              </div>
+              <div class="av-big">🏅</div>
+            </div>
+          </div>
+          <div class="alt-text">
+            <div class="eyebrow">🎮 Projetos</div>
+            <h2>Crie algo que é só seu</h2>
+            <p>
+              Você sai com projetos reais no portfólio. Mini jogo, quiz,
+              calculadora — escolha o tema do seu projeto final.
+            </p>
+            <ul class="check-list">
+              <li>
+                🚀
+                <div>
+                  <strong>Projeto prático</strong> ao final de cada módulo
+                </div>
+              </li>
+              <li>
+                🎨
+                <div><strong>Você escolhe o tema</strong> do projeto final</div>
+              </li>
+              <li>
+                📂
+                <div>
+                  <strong>Fica no portfólio</strong> para mostrar no currículo
+                </div>
+              </li>
+              <li>
+                💡
+                <div>
+                  <strong>Mini jogo, quiz, calculadora</strong> e muito mais
+                </div>
+              </li>
+            </ul>
+            <a href="#projetos" class="btn-text">Ver exemplos de projetos →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cur-sec" id="conteudo">
+      <div class="c">
+        <header class="sec-hd reveal">
+          <div class="eyebrow">📚 Currículo</div>
+          <h2>O que você vai aprender</h2>
+          <p>
+            Do <code>print("Hello!")</code> ao seu primeiro jogo — em 8 módulos
+            práticos.
+          </p>
+        </header>
+        <div class="cur-grid">
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">01</span>
+              <span class="cur-lvl lvl-i">Iniciante</span>
+              <div class="cur-ico">🐍</div>
+              <h3>Fundamentos Python</h3>
+              <p>Variáveis, tipos, operadores, input/output.</p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">02</span>
+              <span class="cur-lvl lvl-i">Iniciante</span>
+              <div class="cur-ico">🔄</div>
+              <h3>Controle de Fluxo</h3>
+              <p>
+                Condicionais <code>if/else</code> e laços
+                <code>for</code>/<code>while</code>.
+              </p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">03</span>
+              <span class="cur-lvl lvl-b">Básico</span>
+              <div class="cur-ico">⚡</div>
+              <h3>Funções</h3>
+              <p>
+                Defina, chame e reutilize com <code>def</code> e
+                <code>return</code>.
+              </p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">04</span>
+              <span class="cur-lvl lvl-b">Básico</span>
+              <div class="cur-ico">📦</div>
+              <h3>Estruturas de Dados</h3>
+              <p>Listas, dicionários e tuplas na prática.</p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">05</span>
+              <span class="cur-lvl lvl-m">Intermediário</span>
+              <div class="cur-ico">🧩</div>
+              <h3>Módulos e Libs</h3>
+              <p>
+                <code>random</code>, <code>math</code> e o ecossistema Python.
+              </p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">06</span>
+              <span class="cur-lvl lvl-m">Intermediário</span>
+              <div class="cur-ico">🗂️</div>
+              <h3>Arquivos e Dados</h3>
+              <p>Leitura, escrita e manipulação de arquivos.</p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card">
+              <span class="cur-n">07</span>
+              <span class="cur-lvl lvl-a">Avançado</span>
+              <div class="cur-ico">🧱</div>
+              <h3>Orientação a Objetos</h3>
+              <p>Classes, objetos e encapsulamento.</p>
+            </div>
+          </div>
+          <div class="cartoon-container-dashed cartoon-container-dashed--card-solid reveal">
+            <div class="cartoon-container-dashed-outer"></div>
+            <div class="cartoon-container-dashed-inner cur-card cur-final">
+              <span class="cur-n">08</span>
+              <span class="cur-lvl lvl-p">Projeto Final</span>
+              <div class="cur-ico">🎮</div>
+              <h3>Projeto Final</h3>
+              <p>Crie seu jogo ou aplicação e ganhe o certificado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proj-sec" id="projetos">
+      <div class="c">
+        <header class="sec-hd reveal">
+          <div class="eyebrow">🏅 Projetos dos alunos</div>
+          <h2>Criado pelos nossos alunos</h2>
+          <p>Projetos reais. O próximo pode ser o seu!</p>
+        </header>
+        <div class="proj-grid">
+          <div class="proj-card reveal">
+            <div class="pc-thumb" style="--g1: #B3EDDC; --g2: #60B9AF">
+              <span class="pc-em">🐍</span>
+              <div class="pc-over"><span>Snake Game</span></div>
+            </div>
+            <div class="pc-body">
+              <h3>Snake Game</h3>
+              <p>Jogo da cobra em Python com Pygame</p>
+              <div class="pc-tags">
+                <span>Pygame</span><span>Classes</span><span>Lógica</span>
+              </div>
+            </div>
+          </div>
+          <div class="proj-card reveal">
+            <div class="pc-thumb" style="--g1: #1A1A1A; --g2: #FFE5B4">
+              <span class="pc-em">🧠</span>
+              <div class="pc-over"><span>Quiz de Inglês</span></div>
+            </div>
+            <div class="pc-body">
+              <h3>Quiz de Inglês</h3>
+              <p>Quiz interativo: Python + inglês do CIlt</p>
+              <div class="pc-tags">
+                <span>Listas</span><span>Dicts</span><span>CIlt</span>
+              </div>
+            </div>
+          </div>
+          <div class="proj-card reveal">
+            <div class="pc-thumb" style="--g1: #FFE5B4; --g2: #1A1A1A">
+              <span class="pc-em">🔢</span>
+              <div class="pc-over"><span>Calculadora</span></div>
+            </div>
+            <div class="pc-body">
+              <h3>Calculadora Mágica</h3>
+              <p>Calculadora com funções matemáticas</p>
+              <div class="pc-tags"><span>Funções</span><span>Input</span></div>
+            </div>
+          </div>
+          <div class="proj-card reveal">
+            <div class="pc-thumb" style="--g1: #B3EDDC; --g2: #1A1A1A">
+              <span class="pc-em">🎲</span>
+              <div class="pc-over"><span>Adivinha!</span></div>
+            </div>
+            <div class="pc-body">
+              <h3>Adivinha o Número</h3>
+              <p>Jogo de adivinhação com dicas inteligentes</p>
+              <div class="pc-tags"><span>random</span><span>while</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section faq-sec" id="faq">
+      <div class="c">
+        <div class="cartoon-container-dashed cartoon-container-dashed--card reveal">
+          <div class="cartoon-container-dashed-outer"></div>
+          <div class="cartoon-container-dashed-inner yellow">
+            <div class="faq-layout">
+              <div class="faq-left reveal">
+                <div class="eyebrow">❓ FAQ</div>
+                <h2>Perguntas<br />frequentes</h2>
+                <p>Ainda tem dúvidas? Fala com a gente!</p>
+                <a href="mailto:hellopython@cilt.com.br" class="btn-faq"
+                  >📧 Falar com a gente</a
+                >
+              </div>
+              <div class="faq-right">
+                <div class="cartoon-container-dashed cartoon-container-dashed--card-solid">
+                  <div class="cartoon-container-dashed-outer"></div>
+                  <div class="cartoon-container-dashed-inner">
+                    <details class="faq">
+                      <summary>O que é o Hello Python?</summary>
+                      <p>
+                        Um projeto de extensão gratuito que ensina Python para
+                        alunos do CIlt, combinando o inglês da escola com
+                        programação — as duas habilidades mais valorizadas no
+                        mercado.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="cartoon-container-dashed cartoon-container-dashed--card-solid">
+                  <div class="cartoon-container-dashed-outer"></div>
+                  <div class="cartoon-container-dashed-inner">
+                    <details class="faq">
+                      <summary>Preciso ter experiência em programação?</summary>
+                      <p>
+                        Não! Começamos do zero. Do que é uma variável até criar seu
+                        primeiro jogo. Basta curiosidade e vontade de aprender.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="cartoon-container-dashed cartoon-container-dashed--card-solid">
+                  <div class="cartoon-container-dashed-outer"></div>
+                  <div class="cartoon-container-dashed-inner">
+                    <details class="faq">
+                      <summary>Preciso de computador para participar?</summary>
+                      <p>
+                        As aulas têm computadores disponíveis. Para estudar em casa,
+                        use o Replit.com — funciona no navegador, até no celular.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="cartoon-container-dashed cartoon-container-dashed--card-solid">
+                  <div class="cartoon-container-dashed-outer"></div>
+                  <div class="cartoon-container-dashed-inner">
+                    <details class="faq">
+                      <summary>As aulas são presenciais ou online?</summary>
+                      <p>
+                        Formato híbrido: aulas presenciais no CIlt + materiais e
+                        exercícios online para praticar quando quiser.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="cartoon-container-dashed cartoon-container-dashed--card-solid">
+                  <div class="cartoon-container-dashed-outer"></div>
+                  <div class="cartoon-container-dashed-inner">
+                    <details class="faq">
+                      <summary>Como funciona o certificado?</summary>
+                      <p>
+                        Conclua todos os módulos, entregue seu projeto final e receba
+                        seu certificado de conclusão.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+
+                <div class="cartoon-container-dashed cartoon-container-dashed--card-solid">
+                  <div class="cartoon-container-dashed-outer"></div>
+                  <div class="cartoon-container-dashed-inner">
+                    <details class="faq">
+                      <summary>É realmente gratuito?</summary>
+                      <p>
+                        100%. O Hello Python é um projeto de extensão universitária
+                        para democratizar tecnologia. Nenhum custo para alunos do
+                        CIlt.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-sec" id="certificado">
+      <div class="c">
+        <div class="cta-card reveal">
+          <div class="cta-deco-1" aria-hidden="true"></div>
+          <div class="cta-deco-2" aria-hidden="true"></div>
+          <div class="cta-deco-dots" aria-hidden="true"></div>
+          <div class="cta-inner">
+            <div class="cta-trophy">🏆</div>
+            <div class="eyebrow cta-eyebrow">Certificado gratuito</div>
+            <h2>Pronto para pegar<br />seu certificado?</h2>
+            <p>
+              Complete os módulos, entregue seu projeto e ganhe o certificado
+              do Hello Python. 100% gratuito para alunos do CIlt.
+            </p>
+            <div class="cta-checks">
+              <span>✓ 100% gratuito</span>
+              <span>✓ Sem pré-requisitos</span>
+              <span>✓ Certificado incluso</span>
+              <span>✓ Só para CIlt</span>
+            </div>
+            <a href="mailto:hellopython@cilt.com.br" class="btn-cta">
+              📧 Falar com a gente
+            </a>
+            <p class="cta-note">
+              Entre em contato e garanta sua vaga na próxima turma.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
