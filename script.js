@@ -89,74 +89,180 @@ if (numSection) {
   ).observe(numSection);
 }
 
-document.querySelectorAll(".faq").forEach((details) => {
-  details.addEventListener("toggle", () => {
+const faqItems = Array.from(document.querySelectorAll(".faq"));
+
+function faqAnswer(details) {
+  return details.querySelector(".faq-answer");
+}
+
+function openFaq(details) {
+  const content = faqAnswer(details);
+  if (!content) {
+    details.classList.remove("faq-closing");
+    details.open = true;
+    return;
+  }
+
+  details.dataset.animating = "open";
+  details.classList.remove("faq-closing");
+  details.open = true;
+
+  content.style.maxHeight = "0px";
+  content.style.opacity = "0";
+  content.style.transform = "translateY(-14px)";
+  content.style.paddingBottom = "0px";
+  content.style.overflow = "hidden";
+
+  void content.offsetHeight;
+
+  content.style.maxHeight = `${content.scrollHeight}px`;
+  content.style.opacity = "1";
+  content.style.transform = "translateY(0)";
+  content.style.paddingBottom = "18px";
+
+  const onEnd = (event) => {
+    if (event.propertyName !== "max-height") return;
+    content.removeEventListener("transitionend", onEnd);
+    content.style.maxHeight = "none";
+    content.style.overflow = "";
+    delete details.dataset.animating;
+  };
+
+  content.addEventListener("transitionend", onEnd);
+}
+
+function closeFaq(details) {
+  const content = faqAnswer(details);
+  if (!content) {
+    details.classList.remove("faq-closing");
+    details.open = false;
+    return;
+  }
+
+  details.dataset.animating = "close";
+  details.classList.add("faq-closing");
+
+  content.style.maxHeight = `${content.scrollHeight}px`;
+  content.style.opacity = "1";
+  content.style.transform = "translateY(0)";
+  content.style.paddingBottom = "18px";
+  content.style.overflow = "hidden";
+
+  void content.offsetHeight;
+
+  content.style.maxHeight = "0px";
+  content.style.opacity = "0";
+  content.style.transform = "translateY(-14px)";
+  content.style.paddingBottom = "0px";
+
+  const onEnd = (event) => {
+    if (event.propertyName !== "max-height") return;
+    content.removeEventListener("transitionend", onEnd);
+    details.open = false;
+    details.classList.remove("faq-closing");
+    content.style.removeProperty("max-height");
+    content.style.removeProperty("overflow");
+    delete details.dataset.animating;
+  };
+
+  content.addEventListener("transitionend", onEnd);
+}
+
+faqItems.forEach((details) => {
+  const summary = details.querySelector("summary");
+  const content = faqAnswer(details);
+  if (!summary || !content) return;
+
+  if (details.open) {
+    content.style.maxHeight = "none";
+    content.style.opacity = "1";
+    content.style.transform = "translateY(0)";
+    content.style.paddingBottom = "18px";
+  } else {
+    content.style.maxHeight = "0px";
+    content.style.opacity = "0";
+    content.style.transform = "translateY(-14px)";
+    content.style.paddingBottom = "0px";
+  }
+
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (details.dataset.animating) return;
+
     if (details.open) {
-      document.querySelectorAll(".faq").forEach((d) => {
-        if (d !== details) d.open = false;
-      });
+      closeFaq(details);
+      return;
     }
+
+    faqItems.forEach((other) => {
+      if (other !== details && other.open && !other.dataset.animating) {
+        closeFaq(other);
+      }
+    });
+
+    openFaq(details);
   });
 });
 
-// --- CUSTOM SNAKE CURSOR ---
-if (window.matchMedia('(pointer: fine)').matches) {
-  const snakeLength = 8;
-  const snakeParts = [];
-  let mouseX = -100;
-  let mouseY = -100;
+// // --- CUSTOM SNAKE CURSOR ---
+// if (window.matchMedia('(pointer: fine)').matches) {
+//   const snakeLength = 8;
+//   const snakeParts = [];
+//   let mouseX = -100;
+//   let mouseY = -100;
 
-  for (let i = 0; i < snakeLength; i++) {
-    const part = document.createElement('div');
-    part.classList.add('snake-part');
-    if (i === 0) {
-      part.classList.add('snake-head');
-      part.innerHTML = '🐍';
-    } else {
-      part.style.opacity = 1 - (i / snakeLength) * 0.5;
-      part.style.zIndex = 99999 - i;
-    }
-    document.body.appendChild(part);
-    snakeParts.push({ el: part, x: -100, y: -100 });
-  }
+//   for (let i = 0; i < snakeLength; i++) {
+//     const part = document.createElement('div');
+//     part.classList.add('snake-part');
+//     if (i === 0) {
+//       part.classList.add('snake-head');
+//       part.innerHTML = '🐍';
+//     } else {
+//       part.style.opacity = 1 - (i / snakeLength) * 0.5;
+//       part.style.zIndex = 99999 - i;
+//     }
+//     document.body.appendChild(part);
+//     snakeParts.push({ el: part, x: -100, y: -100 });
+//   }
 
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
+//   window.addEventListener('mousemove', (e) => {
+//     mouseX = e.clientX;
+//     mouseY = e.clientY;
+//   });
 
-  const animateSnake = () => {
-    let dx = mouseX - snakeParts[0].x;
-    let dy = mouseY - snakeParts[0].y;
-    snakeParts[0].x += dx * 0.6;
-    snakeParts[0].y += dy * 0.6;
-    snakeParts[0].el.style.transform = `translate(${snakeParts[0].x}px, ${snakeParts[0].y}px) translate(-50%, -50%)`;
+//   const animateSnake = () => {
+//     let dx = mouseX - snakeParts[0].x;
+//     let dy = mouseY - snakeParts[0].y;
+//     snakeParts[0].x += dx * 0.6;
+//     snakeParts[0].y += dy * 0.6;
+//     snakeParts[0].el.style.transform = `translate(${snakeParts[0].x}px, ${snakeParts[0].y}px) translate(-50%, -50%)`;
 
-    for (let i = 1; i < snakeLength; i++) {
-      const prev = snakeParts[i - 1];
-      const curr = snakeParts[i];
-      
-      const dx = prev.x - curr.x;
-      const dy = prev.y - curr.y;
-      
-      curr.x += dx * 0.45;
-      curr.y += dy * 0.45;
-      
-      const scale = 1 - (i / snakeLength) * 0.45;
-      curr.el.style.transform = `translate(${curr.x}px, ${curr.y}px) translate(-50%, -50%) scale(${scale})`;
-    }
-    
-    requestAnimationFrame(animateSnake);
-  };
-  animateSnake();
+//     for (let i = 1; i < snakeLength; i++) {
+//       const prev = snakeParts[i - 1];
+//       const curr = snakeParts[i];
 
-  const interactables = document.querySelectorAll('a, button, summary, select, input, [role="button"], .term-run');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      snakeParts.forEach(p => p.el.classList.add('snake-hover'));
-    });
-    el.addEventListener('mouseleave', () => {
-      snakeParts.forEach(p => p.el.classList.remove('snake-hover'));
-    });
-  });
-}
+//       const dx = prev.x - curr.x;
+//       const dy = prev.y - curr.y;
+
+//       curr.x += dx * 0.45;
+//       curr.y += dy * 0.45;
+
+//       const scale = 1 - (i / snakeLength) * 0.45;
+//       curr.el.style.transform = `translate(${curr.x}px, ${curr.y}px) translate(-50%, -50%) scale(${scale})`;
+//     }
+
+//     requestAnimationFrame(animateSnake);
+//   };
+//   animateSnake();
+
+//   const interactables = document.querySelectorAll('a, button, summary, select, input, [role="button"], .term-run');
+//   interactables.forEach(el => {
+//     el.addEventListener('mouseenter', () => {
+//       snakeParts.forEach(p => p.el.classList.add('snake-hover'));
+//     });
+//     el.addEventListener('mouseleave', () => {
+//       snakeParts.forEach(p => p.el.classList.remove('snake-hover'));
+//     });
+//   });
+// }
