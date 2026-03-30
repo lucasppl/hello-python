@@ -205,6 +205,98 @@ faqItems.forEach((details) => {
   });
 });
 
+(function () {
+  // Aguardar o DOM estar completamente carregado
+  function initSteps3D() {
+    const stepWrappers = document.querySelectorAll(".step-wrapper");
+
+    if (stepWrappers.length === 0) {
+      console.warn("Nenhum .step-wrapper encontrado");
+      return;
+    }
+
+    stepWrappers.forEach((wrapper) => {
+      const stepCard = wrapper.querySelector(".step-3d");
+
+      if (!stepCard) return;
+
+      /**
+       * Manipulador de movimento do mouse
+       * Calcula a rotação 3D baseada na posição do mouse
+       */
+      const handleMouseMove = (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        // Calcular rotação baseada na posição do mouse
+        // Valores entre -12 e 12 graus para efeito mais visível
+        const rotateX = ((centerY - y) / centerY) * 12;
+        const rotateY = ((x - centerX) / centerX) * 12;
+
+        // Aplicar transformação 3D com scale para destacar
+        stepCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        stepCard.style.zIndex = "10";
+
+        // Calcular sombra dinâmica baseada na rotação
+        const shadowX = (rotateY / 8) * 8;
+        const shadowY = (rotateX / 8) * 8;
+
+        // Verificar se é o card accent (terceiro)
+        const isAccent = stepCard.classList.contains("step-accent");
+
+        if (isAccent) {
+          // Sombra para card accent
+          stepCard.style.boxShadow = `
+            ${shadowX}px ${shadowY + 8}px 0 var(--brown-dk),
+            ${shadowX}px ${shadowY + 20}px 35px rgba(26, 26, 26, 0.12),
+            ${shadowX * 0.5}px ${shadowY * 0.5 + 10}px 20px rgba(26, 26, 26, 0.08)
+          `;
+        } else {
+          // Sombra para cards normais
+          stepCard.style.boxShadow = `
+            ${shadowX}px ${shadowY + 15}px 35px rgba(26, 26, 26, 0.12),
+            ${shadowX * 0.5}px ${shadowY * 0.5 + 8}px 20px rgba(26, 26, 26, 0.08)
+          `;
+        }
+      };
+
+      /**
+       * Manipulador de saída do mouse
+       * Reseta a transformação e sombra
+       */
+      const handleMouseLeave = () => {
+        stepCard.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+        stepCard.style.zIndex = "";
+
+        // Resetar sombra baseado no tipo de card
+        if (stepCard.classList.contains("step-accent")) {
+          stepCard.style.boxShadow = `
+            0 6px 0 var(--brown-dk),
+            var(--s2)
+          `;
+        } else {
+          stepCard.style.boxShadow = "var(--s1)";
+        }
+      };
+
+      // Adicionar event listeners
+      wrapper.addEventListener("mousemove", handleMouseMove);
+      wrapper.addEventListener("mouseleave", handleMouseLeave);
+    });
+  }
+
+  // Inicializar quando o DOM estiver pronto
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSteps3D);
+  } else {
+    initSteps3D();
+  }
+})();
+
 // // --- CUSTOM SNAKE CURSOR ---
 // if (window.matchMedia('(pointer: fine)').matches) {
 //   const snakeLength = 8;
@@ -266,3 +358,113 @@ faqItems.forEach((details) => {
 //     });
 //   });
 // }
+
+(function () {
+  const canvas = document.getElementById("cta-network");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  const particles = [];
+  const maxDistance = 140;
+  const pointCount = 80;
+  const mouse = { x: null, y: null, radius: 130 };
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.floor(canvas.clientWidth * dpr);
+    canvas.height = Math.floor(canvas.clientHeight * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function createParticles() {
+    particles.length = 0;
+    for (let i = 0; i < pointCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.clientWidth,
+        y: Math.random() * canvas.clientHeight,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8,
+        r: 1.6 + Math.random() * 1.8,
+      });
+    }
+  }
+
+  function draw() {
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Partículas + conexões
+    for (let i = 0; i < particles.length; i++) {
+      const pi = particles[i];
+      pi.x += pi.vx;
+      pi.y += pi.vy;
+
+      if (pi.x < 0 || pi.x > w) pi.vx *= -1;
+      if (pi.y < 0 || pi.y > h) pi.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(pi.x, pi.y, pi.r, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(96, 185, 175, 0.75)";
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const pj = particles[j];
+        const dx = pi.x - pj.x;
+        const dy = pi.y - pj.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDistance) {
+          const alpha = 0.15 + (1 - dist / maxDistance) * 0.5;
+          ctx.strokeStyle = `rgba(96, 185, 175, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(pi.x, pi.y);
+          ctx.lineTo(pj.x, pj.y);
+          ctx.stroke();
+        }
+      }
+
+      if (mouse.x !== null) {
+        const mx = pi.x - mouse.x;
+        const my = pi.y - mouse.y;
+        const md = Math.sqrt(mx * mx + my * my);
+
+        if (md < mouse.radius) {
+          pi.x += (mx / md) * 0.7;
+          pi.y += (my / md) * 0.7;
+
+          ctx.strokeStyle = `rgba(177, 222, 189, 0.45)`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(pi.x, pi.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  const action = () => {
+    resize();
+    createParticles();
+  };
+
+  window.addEventListener("resize", action);
+  window.addEventListener("mousemove", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = event.clientX - rect.left;
+    mouse.y = event.clientY - rect.top;
+  });
+
+  window.addEventListener("mouseout", () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+
+  action();
+  requestAnimationFrame(draw);
+})();

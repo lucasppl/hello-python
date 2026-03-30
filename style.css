@@ -72,6 +72,8 @@
   --max-w: 1080px;
 }
 
+/* Dark Mode Variables */
+
 /* ─── RESET ─── */
 *,
 *::before,
@@ -183,6 +185,33 @@ summary::-webkit-details-marker {
 }
 .section {
   padding: 96px 0;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-bd);
+  overflow: hidden;
+}
+
+#hero-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero .hero-c {
+  position: relative;
+  z-index: 2;
+}
+
+.hero .hero-blob,
+.hero .dot-grid {
+  display: block;
 }
 
 /* ─── EYEBROW ─── */
@@ -916,6 +945,66 @@ summary::-webkit-details-marker {
   }
   50% {
     opacity: 0;
+  }
+}
+
+/* ─── STEP WRAPPER (CONTAINER PARA 3D) ─── */
+.step-wrapper {
+  perspective: 1000px;
+  height: 100%;
+}
+
+.step-wrapper {
+  perspective: 1000px;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ─── STEP COM EFEITO 3D ─── */
+.step-3d {
+  transform-style: preserve-3d;
+  transition:
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
+  will-change: transform;
+  width: 100%;
+}
+
+/* ─── SOMBRA DINÂMICA PADRÃO ─── */
+.step-3d {
+  box-shadow: var(--s1);
+}
+
+/* ─── STEP ACCENT (TERCEIRO CARD) COM EFEITO 3D ─── */
+.step-accent.step-3d {
+  box-shadow:
+    0 6px 0 var(--brown-dk),
+    var(--s2);
+}
+
+/* ─── RESPONSIVIDADE ─── */
+@media (max-width: 768px) {
+  .step-wrapper {
+    perspective: 800px;
+  }
+
+  /* Desativar efeito 3D em dispositivos móveis */
+  .step-3d {
+    transform: none !important;
+  }
+
+  .step-3d:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: var(--s3) !important;
+  }
+}
+
+/* ─── SUPORTE PARA PREFERÊNCIA DE MOVIMENTO REDUZIDO ─── */
+@media (prefers-reduced-motion: reduce) {
+  .step-3d {
+    transition: none;
+    transform: none !important;
   }
 }
 
@@ -2423,3 +2512,41 @@ summary::-webkit-details-marker {
     grid-template-columns: 1fr;
   }
 }
+
+/* ═══════════════════════════
+         CTA
+      ═══════════════════════════ */
+.cta-sec {
+  background: var(--bg);
+}
+.cta-card {
+  position: relative;
+  background: radial-gradient(
+    circle at 50% 20%,
+    #1d2338 0%,
+    #0d121d 35%,
+    #03050a 100%
+  );
+  color: #f6f8ff;
+  border-radius: var(--r32);
+  padding: 72px 48px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: var(--s4);
+}
+#cta-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.cta-card .cta-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ═══════════════════════════
+         DARK MODE ADJUSTMENTS
+/* Theme Toggle Button */
