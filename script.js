@@ -118,7 +118,6 @@ function openFaq(details) {
   content.style.maxHeight = `${content.scrollHeight}px`;
   content.style.opacity = "1";
   content.style.transform = "translateY(0)";
-  content.style.paddingBottom = "18px";
 
   const onEnd = (event) => {
     if (event.propertyName !== "max-height") return;
