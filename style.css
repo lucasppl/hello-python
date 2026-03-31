@@ -171,6 +171,22 @@ summary::-webkit-details-marker {
   stroke-linejoin: round;
 }
 
+/* Specific fix for gamepad icon */
+#icon-gamepad {
+  fill: #60b9af;
+  stroke: #1a1a1a;
+  stroke-width: 0.3;
+  opacity: 1;
+}
+
+/* Make gamepad icon more visible */
+.ui-svg:has(use[href="#icon-gamepad"]) {
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+  border-radius: 4px;
+  padding: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 /* ─── LAYOUT ─── */
 .c {
   max-width: var(--max-w);
@@ -2111,65 +2127,52 @@ summary::-webkit-details-marker {
          CTA
       ═══════════════════════════ */
 .cta-sec {
-  background: #0f1b3a;
+  background: var(--bg);
   padding: 96px 0;
 }
 .cta-card {
-  background: linear-gradient(140deg, #fee37f 0%, #ffc647 45%, #ff9f3d 100%);
-  color: #1d2f4f;
-  border: 6px solid #1b2c57;
-  border-radius: 2rem;
-  padding: 78px 60px;
-  text-align: center;
   position: relative;
+  background: linear-gradient(135deg, #1a1a18 0%, #0f0f0d 60%, #121a17 100%);
+  color: var(--cartoon-cream);
+  border: 2.5px solid rgba(179, 237, 220, 0.2);
+  border-radius: 2rem;
+  padding: 72px 48px;
+  text-align: center;
   overflow: hidden;
   box-shadow:
-    0 16px 0 #1b2c57,
-    0 26px 36px rgba(0, 0, 0, 0.35);
-  transform: skew(-2deg);
+    0 12px 0 #0a0a08,
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(179, 237, 220, 0.07);
+  transform: skew(-1deg);
 }
 .cta-card::before,
 .cta-card::after {
   content: "";
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
   pointer-events: none;
 }
 .cta-card::before {
-  top: -28px;
-  left: -32px;
-  width: 192px;
-  height: 192px;
+  width: 360px;
+  height: 360px;
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(96, 185, 175, 0.16) 0%,
+    transparent 65%
+  );
 }
 .cta-card::after {
-  bottom: -20px;
-  right: -22px;
-  width: 100px;
-  height: 100px;
-}
-/* decorative shapes */
-.cta-deco-1 {
-  position: absolute;
-  top: -70px;
-  right: -70px;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
-  filter: blur(18px);
-  pointer-events: none;
-}
-.cta-deco-2 {
-  position: absolute;
-  bottom: -55px;
-  left: -55px;
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  background: rgba(31, 44, 96, 0.35);
-  filter: blur(16px);
-  pointer-events: none;
+  width: 220px;
+  height: 220px;
+  bottom: -70px;
+  right: -50px;
+  background: radial-gradient(
+    circle,
+    rgba(179, 237, 220, 0.1) 0%,
+    transparent 65%
+  );
 }
 .cta-deco-dots {
   position: absolute;
@@ -2177,18 +2180,17 @@ summary::-webkit-details-marker {
   pointer-events: none;
   background-image: radial-gradient(
     circle,
-    rgba(0, 0, 0, 0.12) 1px,
+    rgba(255, 255, 255, 0.06) 1px,
     transparent 1px
   );
   background-size: 24px 24px;
 }
-
 .cta-inner {
   position: relative;
   z-index: 2;
   max-width: 560px;
   margin: 0 auto;
-  transform: skew(2deg);
+  transform: skew(1deg);
 }
 .cta-trophy {
   width: 4.2rem;
@@ -2196,33 +2198,33 @@ summary::-webkit-details-marker {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.4));
+  color: var(--cartoon-mint);
 }
 .cta-trophy .ui-svg {
   width: 100%;
   height: 100%;
 }
 .cta-eyebrow {
-  background: #1b2c57;
-  border: 2px dashed #3d5597;
-  color: #fef3d1;
+  background: rgba(179, 237, 220, 0.1);
+  border: 1.5px dashed rgba(179, 237, 220, 0.4);
+  color: var(--cartoon-mint);
   margin-bottom: 20px;
   padding: 8px 14px;
   border-radius: 999px;
   font-weight: 700;
 }
 .cta-inner h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #132149;
-  text-shadow: 1px 1px 0 #fff9cc;
+  color: var(--cartoon-cream);
+  text-shadow: 0 2px 24px rgba(96, 185, 175, 0.18);
   margin-bottom: 16px;
 }
 .cta-inner > p {
-  color: #1a2b52;
+  color: rgba(255, 254, 245, 0.6);
   font-size: 1rem;
   margin-bottom: 32px;
   line-height: 1.75;
-  font-weight: 600;
+  font-weight: 400;
 }
 .cta-checks {
   display: flex;
@@ -2235,34 +2237,45 @@ summary::-webkit-details-marker {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #1b2c57;
-  border: 2px solid #fddc5c;
-  color: #fffbe1;
+  background: rgba(255, 254, 245, 0.06);
+  border: 1.5px solid rgba(179, 237, 220, 0.28);
+  color: var(--cartoon-cream);
   border-radius: var(--rpill);
   padding: 10px 18px;
   font-size: 0.92rem;
   font-weight: 700;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  text-shadow: none;
+  transition:
+    background var(--dur),
+    border-color var(--dur),
+    transform var(--dur) var(--spring),
+    box-shadow var(--dur);
+}
+.cta-checks span:hover {
+  background: rgba(179, 237, 220, 0.12);
+  border-color: var(--cartoon-teal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
 }
 .cta-checks .ui-svg {
   width: 1.1rem;
   height: 1.1rem;
-  color: #ffeeaa;
+  color: var(--cartoon-mint);
 }
 .btn-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #ffeb7f;
-  color: #193a35;
+  background: var(--cartoon-mint);
+  color: #0d1a16;
   font-family: var(--ff-head);
   font-weight: 700;
   font-size: 1.05rem;
   padding: 16px 40px;
   border-radius: 999px;
   box-shadow:
-    0 6px 0 rgba(0, 0, 0, 0.2),
-    0 12px 0 #caa861,
+    0 6px 0 rgba(0, 0, 0, 0.35),
+    0 12px 0 #2a7a6e,
     var(--s3);
   transition:
     transform 0.2s ease,
@@ -2272,23 +2285,26 @@ summary::-webkit-details-marker {
 .btn-cta:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow:
-    0 8px 0 rgba(0, 0, 0, 0.25),
-    0 14px 0 #caa861,
-    0 34px 26px rgba(0, 0, 0, 0.2);
-  filter: brightness(1.03);
+    0 8px 0 rgba(0, 0, 0, 0.35),
+    0 14px 0 #2a7a6e,
+    0 34px 26px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.04);
 }
 .btn-cta:active {
   transform: translateY(1px) scale(0.99);
   box-shadow:
-    0 3px 0 rgba(0, 0, 0, 0.2),
-    0 8px 0 #caa861,
-    0 20px 16px rgba(0, 0, 0, 0.18);
+    0 3px 0 rgba(0, 0, 0, 0.3),
+    0 8px 0 #2a7a6e,
+    0 20px 16px rgba(0, 0, 0, 0.2);
   filter: brightness(0.98);
 }
 .cta-note {
   margin-top: 14px;
   font-size: 0.78rem;
-  color: rgba(255, 254, 245, 0.35);
+  color: rgba(255, 254, 245, 0.25);
+}
+#cta-network {
+  display: none;
 }
 
 /* ═══════════════════════════
@@ -2551,54 +2567,4 @@ summary::-webkit-details-marker {
   }
 }
 
-/* ═══════════════════════════
-         CTA
-      ═══════════════════════════ */
-.cta-sec {
-  background: var(--bg);
-}
-.cta-card {
-  position: relative;
-  background: linear-gradient(135deg, #f4c674, #ffedc7);
-  color: #193a35;
-  border: 4px solid #ffd86b;
-  border-radius: 2rem;
-  padding: 72px 48px;
-  text-align: center;
-  overflow: hidden;
-  box-shadow:
-    0 12px 0 #d79f4a,
-    0 20px 30px rgba(0, 0, 0, 0.2);
-  transform: skew(-1deg);
-}
-.cta-card::before,
-.cta-card::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-}
-.cta-card::before {
-  width: 170px;
-  height: 170px;
-  top: -40px;
-  left: -40px;
-}
-.cta-card::after {
-  width: 80px;
-  height: 80px;
-  bottom: -20px;
-  right: -10px;
-}
-#cta-network {
-  display: none;
-}
-.cta-card .cta-inner {
-  position: relative;
-  z-index: 2;
-  transform: skew(1deg);
-}
-
-/* ═══════════════════════════
-         DARK MODE ADJUSTMENTS
 /* Theme Toggle Button */
