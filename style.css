@@ -1544,6 +1544,9 @@ summary::-webkit-details-marker {
 }
 
 /* Alt text */
+.p-under {
+  text-decoration: underline solid var(--mint) 2px;
+}
 .alt-text h2 {
   font-size: clamp(1.7rem, 3.5vw, 2.4rem);
   margin: 12px 0 18px;
