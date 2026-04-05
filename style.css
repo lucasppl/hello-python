@@ -203,11 +203,15 @@ body {
 }
 
 /* ─── CUSTOM SNAKE CURSOR ─── */
+/*
+
 @media (pointer: fine) {
   * {
     cursor: auto !important;
   }
 }
+
+*/
 
 #snake-canvas {
   display: none !important;
