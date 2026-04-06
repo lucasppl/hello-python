@@ -1119,6 +1119,10 @@ summary::-webkit-details-marker {
     transform: translateY(-8px) !important;
     box-shadow: var(--s3) !important;
   }
+
+  .terminal {
+    display: none;
+  }
 }
 
 /* ─── SUPORTE PARA PREFERÊNCIA DE MOVIMENTO REDUZIDO ─── */
@@ -2598,7 +2602,7 @@ summary::-webkit-details-marker {
     padding: 56px 28px 56px;
   }
   .hero-right {
-    order: -1;
+    order: none;
   }
   .hero-tag,
   .hero-stats {
