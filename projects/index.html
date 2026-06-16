@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos · Hello Python</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../img/nav-logo.svg" alt="Hello Python">
+            </div>
+            <div class="nav-badge" id="nav-status">Portal do Aluno</div>
+        </div>
+    </nav>
+
+    <main id="screen-login" class="screen active">
+        <div class="login-card">
+            <div class="login-emoji">🔐</div>
+            <h1>Portal de Projetos</h1>
+            <p>Digite a senha de acesso fornecida pelo seu instrutor para visualizar e selecionar seu projeto.</p>
+
+            <div class="error-msg" id="login-error">
+                <span>⚠️</span> Senha incorreta. Tente novamente.
+            </div>
+
+            <div class="field-wrap">
+                <label for="pwd-input">Senha</label>
+                <input class="field-input" id="pwd-input" type="password" placeholder="Digite sua senha de acesso"
+                    autocomplete="current-password" />
+            </div>
+
+            <button class="btn-primary login-btn" id="login-btn">
+                Acessar Projetos →
+            </button>
+
+            <p class="login-hint">Esqueceu sua senha? Fale com seu instrutor no Discord.</p>
+        </div>
+    </main>
+
+    <main id="screen-projects" class="screen">
+        <div class="projects-header fade-in">
+            <div class="eyebrow">🎯 Escolha seu projeto</div>
+            <h1>O que você vai construir?</h1>
+            <p>Selecione um projeto abaixo. Ele será usado como sua prova final — leia a descrição cuidadosamente antes
+                de confirmar.</p>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="proj-card fade-in" data-proj="arena">
+                <div class="proj-card-top">
+                    <div class="proj-emoji">⚔️</div>
+                    <div class="diff-badge diff-beginner">Beginner</div>
+                </div>
+                <h3>Arena de Monstros</h3>
+                <p class="proj-desc">Um sistema de batalha interativo no terminal onde o jogador enfrenta monstros e
+                    tenta sobreviver usando ataques e turnos.</p>
+                <div class="proj-meta">
+                    <div class="proj-meta-item">⏱ <span>1h30</span></div>
+                    <div class="proj-meta-item">🧩 <span>5 requisitos</span></div>
+                </div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Funções</span>
+                    <span class="proj-tag">Loops</span>
+                </div>
+                <button class="btn-mint" onclick="selectProject('arena')">Selecionar Projeto</button>
+            </div>
+
+            <div class="proj-card fade-in" data-proj="quiz">
+                <div class="proj-card-top">
+                    <div class="proj-emoji">🧠</div>
+                    <div class="diff-badge diff-beginner">Beginner</div>
+                </div>
+                <h3>Quiz Personalizado</h3>
+                <p class="proj-desc">Crie um jogo de perguntas e respostas sobre um tema da sua escolha, armazenando
+                    dados e calculando a pontuação final.</p>
+                <div class="proj-meta">
+                    <div class="proj-meta-item">⏱ <span>1h30</span></div>
+                    <div class="proj-meta-item">🧩 <span>5 requisitos</span></div>
+                </div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Listas/Dicts</span>
+                    <span class="proj-tag">Lógica</span>
+                </div>
+                <button class="btn-mint" onclick="selectProject('quiz')">Selecionar Projeto</button>
+            </div>
+
+            <div class="proj-card fade-in" data-proj="sorte">
+                <div class="proj-card-top">
+                    <div class="proj-emoji">🎲</div>
+                    <div class="diff-badge diff-beginner">Beginner</div>
+                </div>
+                <h3>Mestre da Sorte</h3>
+                <p class="proj-desc">Um jogo de adivinhação onde o computador escolhe um número secreto e fornece dicas
+                    (maior/menor) até você acertar.</p>
+                <div class="proj-meta">
+                    <div class="proj-meta-item">⏱ <span>1h30</span></div>
+                    <div class="proj-meta-item">🧩 <span>5 requisitos</span></div>
+                </div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Random</span>
+                    <span class="proj-tag">Condicionais</span>
+                </div>
+                <button class="btn-mint" onclick="selectProject('sorte')">Selecionar Projeto</button>
+            </div>
+
+            <div class="proj-card fade-in" data-proj="corrida">
+                <div class="proj-card-top">
+                    <div class="proj-emoji">🏁</div>
+                    <div class="diff-badge diff-beginner">Beginner</div>
+                </div>
+                <h3>Corrida Maluca</h3>
+                <p class="proj-desc">Simule uma corrida automática no terminal onde competidores disputam posições
+                    aleatoriamente até a linha de chegada.</p>
+                <div class="proj-meta">
+                    <div class="proj-meta-item">⏱ <span>1h30</span></div>
+                    <div class="proj-meta-item">🧩 <span>5 requisitos</span></div>
+                </div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Automação</span>
+                    <span class="proj-tag">Terminal</span>
+                </div>
+                <button class="btn-mint" onclick="selectProject('corrida')">Selecionar Projeto</button>
+            </div>
+
+            <div class="proj-card fade-in" data-proj="aventura">
+                <div class="proj-card-top">
+                    <div class="proj-emoji">📖</div>
+                    <div class="diff-badge diff-beginner">Beginner</div>
+                </div>
+                <h3>Aventura Interativa</h3>
+                <p class="proj-desc">Crie uma história no estilo "Escolha sua própria aventura", onde as decisões do
+                    jogador levam a diferentes finais.</p>
+                <div class="proj-meta">
+                    <div class="proj-meta-item">⏱ <span>1h30</span></div>
+                    <div class="proj-meta-item">🧩 <span>5 requisitos</span></div>
+                </div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Controle de Fluxo</span>
+                    <span class="proj-tag">Criatividade</span>
+                </div>
+                <button class="btn-mint" onclick="selectProject('aventura')">Selecionar Projeto</button>
+            </div>
+
+            <div class="proj-card fade-in" data-proj="calculadora">
+                <div class="proj-card-top">
+                    <div class="proj-emoji">➗</div>
+                    <div class="diff-badge diff-beginner">Beginner</div>
+                </div>
+                <h3>Calculadora Turbo</h3>
+                <p class="proj-desc">Desenvolva uma calculadora interativa baseada em um menu que realiza operações
+                    matemáticas básicas em um loop.</p>
+                <div class="proj-meta">
+                    <div class="proj-meta-item">⏱ <span>1h30</span></div>
+                    <div class="proj-meta-item">🧩 <span>5 requisitos</span></div>
+                </div>
+                <div class="proj-tags">
+                    <span class="proj-tag">Python</span>
+                    <span class="proj-tag">Funções</span>
+                    <span class="proj-tag">Menus</span>
+                </div>
+                <button class="btn-mint" onclick="selectProject('calculadora')">Selecionar Projeto</button>
+            </div>
+
+        </div>
+    </main>
+
+    <main id="screen-docs" class="screen">
+        <div class="docs-topbar">
+            <div class="docs-topbar-inner">
+                <div class="docs-breadcrumb">
+                    <a onclick="backToProjects()">← Projetos</a>
+                    <span>/</span>
+                    <span id="breadcrumb-title">...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="docs-layout">
+            <aside class="docs-sidebar">
+                <div class="sidebar-card">
+                    <div class="sidebar-header">
+                        <h3 id="sidebar-title">...</h3>
+                        <p id="sidebar-subtitle">Seu projeto final</p>
+                    </div>
+                    <div class="sidebar-body">
+                        <div class="sidebar-meta">
+                            <div class="sidebar-meta-row">
+                                <span class="label">Dificuldade</span>
+                                <span class="val" id="sidebar-diff">Beginner</span>
+                            </div>
+                            <div class="sidebar-meta-row">
+                                <span class="label">Tempo est.</span>
+                                <span class="val" id="sidebar-time">1h30</span>
+                            </div>
+                            <div class="sidebar-meta-row">
+                                <span class="label">Linguagem</span>
+                                <span class="val">Python 3+</span>
+                            </div>
+                            <div class="sidebar-meta-row">
+                                <span class="label">Entrega</span>
+                                <span class="val">URL do GitHub</span>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-divider"></div>
+
+                        <nav class="sidebar-nav" id="sidebar-nav">
+                            <a onclick="scrollToSection('s-overview')" class="active">📋 Visão Geral</a>
+                            <a onclick="scrollToSection('s-requirements')">✅ Requisitos</a>
+                            <a onclick="scrollToSection('s-rules')">📏 Regras de Negócio</a>
+                            <a onclick="scrollToSection('s-criteria')">🏆 Critérios de Aceite</a>
+                            <a onclick="scrollToSection('s-assets')">🗂 Assets & Links</a>
+                            <a onclick="scrollToSection('s-hints')">💡 Dicas</a>
+                            <a onclick="scrollToSection('s-faq')">❓ FAQ</a>
+                            <a onclick="scrollToSection('s-submit')">🚀 Entrega</a>
+                        </nav>
+
+                        <div class="sidebar-divider"></div>
+
+                        <div class="sidebar-crit">
+                            <h4>Critérios de Avaliação</h4>
+                            <div class="crit-item">
+                                <div class="crit-dot"></div>Todos os requisitos implementados
+                            </div>
+                            <div class="crit-item">
+                                <div class="crit-dot"></div>Código legível e organizado
+                            </div>
+                            <div class="crit-item">
+                                <div class="crit-dot"></div>Erros e entradas inválidas tratados
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="docs-main">
+                <section class="docs-section" id="s-overview">
+                    <h2><span class="section-icon">📋</span> Visão Geral</h2>
+                    <div class="docs-prose" id="proj-overview"></div>
+                </section>
+
+                <section class="docs-section" id="s-requirements">
+                    <h2><span class="section-icon">✅</span> Requisitos Funcionais</h2>
+                    <div class="req-list" id="proj-requirements"></div>
+                </section>
+
+                <section class="docs-section" id="s-rules">
+                    <h2><span class="section-icon">📏</span> Regras de Negócio</h2>
+                    <div class="rules-grid" id="proj-rules"></div>
+                </section>
+
+                <section class="docs-section" id="s-criteria">
+                    <h2><span class="section-icon">🏆</span> Critérios de Aceite</h2>
+                    <div class="criteria-list" id="proj-criteria"></div>
+                </section>
+
+                <section class="docs-section" id="s-assets">
+                    <h2><span class="section-icon">🗂</span> Assets & Recursos</h2>
+                    <div class="assets-grid" id="proj-assets"></div>
+                </section>
+
+                <section class="docs-section" id="s-hints">
+                    <h2><span class="section-icon">💡</span> Dicas</h2>
+                    <div id="proj-hints"></div>
+                </section>
+
+                <section class="docs-section" id="s-faq">
+                    <h2><span class="section-icon">❓</span> FAQ</h2>
+                    <div class="faq-list" id="proj-faq"></div>
+                </section>
+
+                <section class="docs-section" id="s-submit">
+                    <h2><span class="section-icon">🚀</span> Entrega</h2>
+                    <div class="submit-card">
+                        <h2>Envie seu projeto</h2>
+                        <div class="form-group">
+                            <label class="form-label">URL do Repositório GitHub <span>*</span></label>
+                            <input class="form-input" id="sub-github" type="url"
+                                placeholder="https://github.com/usuario/projeto" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Notas Adicionais</label>
+                            <textarea class="form-input" id="sub-notes"
+                                placeholder="Qualquer coisa que o instrutor deva saber..."></textarea>
+                        </div>
+                        <div class="submit-footer">
+                            <button class="btn-primary" onclick="submitProject()">Enviar Projeto →</button>
+                        </div>
+                        <div class="submit-success" id="submit-success">
+                            🎉 Projeto enviado com sucesso!
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <div class="modal-icon">🎯</div>
+            <h2>Confirmar Projeto</h2>
+            <p>Você está prestes a selecionar <strong id="modal-proj-name">...</strong> como seu projeto de exame.</p>
+            <div class="modal-warning">
+                ⚠️ <strong>Este é seu projeto final.</strong> Tenha certeza da sua escolha antes de prosseguir.
+            </div>
+            <div class="modal-actions">
+                <button class="btn-outline" onclick="closeModal()">Voltar</button>
+                <button class="btn-primary" onclick="confirmProject()">Sim, Selecionar Projeto →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
