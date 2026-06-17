@@ -6,6 +6,7 @@ const PROJECTS = {
         name: "Arena de Monstros",
         diff: "Básico",
         time: "1h30",
+        video: "https://www.youtube.com/embed/Ws7ljIQ1tLg",
         overview: `
       <p>Imagine que você é um jovem guerreiro que entrou em uma arena cheia de monstros. A plateia está na expectativa. O primeiro monstro aparece. E agora? <strong>É hora de lutar.</strong></p>
       <p>Neste projeto, você vai criar um <strong>jogo de batalha no terminal</strong>. O jogador vai enfrentar monstros um a um, atacando e recebendo danos até que alguém seja derrotado. É um jogo de turno — primeiro o jogador age, depois o monstro age.</p>
@@ -112,10 +113,10 @@ const PROJECTS = {
             { q: "E se meu personagem puder ter atributos como força, defesa, etc.?", a: "Ótima ideia! Isso é uma funcionalidade bônus e pode enriquecer bastante o seu projeto." }
         ],
         assets: [
-            { icon: "📗", name: "W3Schools — Python While Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp" },
-            { icon: "📗", name: "W3Schools — Python Dictionaries", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_dictionaries.asp" },
-            { icon: "📗", name: "W3Schools — Python Functions", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp" },
-            { icon: "📗", name: "W3Schools — Python Random Module", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/module_random.asp" }
+            { icon: "🔁", name: "Loops em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp" },
+            { icon: "📄", name: "Dicionários em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_dictionaries.asp" },
+            { icon: "📗", name: "Funções em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp" },
+            { icon: "🎲", name: "Módulo Random em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/module_random.asp" }
         ]
     },
 
@@ -123,6 +124,7 @@ const PROJECTS = {
         name: "Quiz Personalizado",
         diff: "Básico",
         time: "1h30",
+        video: "https://www.youtube.com/embed/rwjd72IglJw",
         overview: `
       <p>Você já participou de um quiz de perguntas e respostas? Aqui você vai <strong>construir o seu próprio</strong>.</p>
       <p>O projeto é um jogo interativo no terminal: o programa faz perguntas sobre um tema escolhido por você, o jogador responde, e no final recebe sua pontuação. O tema é completamente livre — pode ser futebol, séries, música, ciências, história, o que você quiser.</p>
@@ -218,10 +220,10 @@ const PROJECTS = {
             { q: "Posso adicionar um timer?", a: "Sim! Isso conta como funcionalidade bônus e é um excelente desafio adicional." }
         ],
         assets: [
-            { icon: "📗", name: "W3Schools — Python Lists", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_lists.asp" },
-            { icon: "📗", name: "W3Schools — Python Dictionaries", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_dictionaries.asp" },
-            { icon: "📗", name: "W3Schools — Python For Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_for_loops.asp" },
-            { icon: "📗", name: "W3Schools — Python Functions", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp" }
+            { icon: "📄", name: "Listas em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_lists.asp", desc: "Aprenda a criar e percorrer listas para armazenar as perguntas do seu quiz." },
+            { icon: "✍️", name: "Dicionários em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_dictionaries.asp", desc: "Use dicionários para representar cada pergunta com enunciado, opções e resposta correta." },
+            { icon: "🔁", name: "Laços de repetição for", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_for_loops.asp", desc: "Veja como percorrer a lista de perguntas automaticamente com o for." },
+            { icon: "📗", name: "Funções em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp", desc: "Organize seu código em funções: uma para exibir a pergunta, outra para calcular o resultado." }
         ]
     },
 
@@ -229,6 +231,7 @@ const PROJECTS = {
         name: "Mestre da Sorte",
         diff: "Básico",
         time: "1h30",
+        video: "https://www.youtube.com/embed/DpTvjPYz2F4",
         overview: `
       <p>O computador pensa em um número. Você tenta adivinhar qual é. A cada tentativa errada, ele te dá uma dica: o número secreto é maior ou menor do que o seu chute?</p>
       <p>Esse é o <strong>Mestre da Sorte</strong> — um jogo clássico de adivinhação que parece simples, mas exige que você organize bem a lógica do programa.</p>
@@ -331,10 +334,10 @@ const PROJECTS = {
             { q: "Preciso usar funções?", a: "Não é obrigatório para aprovação, mas é altamente recomendado. Código com funções é mais organizado e recebe pontuação extra." }
         ],
         assets: [
-            { icon: "📗", name: "W3Schools — Python Random Module", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/module_random.asp" },
-            { icon: "📗", name: "W3Schools — Python While Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp" },
-            { icon: "📗", name: "W3Schools — Python Conditions", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_conditions.asp" },
-            { icon: "📗", name: "W3Schools — Python Variables", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_variables.asp" }
+            { icon: "🎲", name: "Módulo Random em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/module_random.asp", desc: "Veja como usar o módulo random para gerar o número secreto que o jogador vai tentar adivinhar." },
+            { icon: "🔁", name: "Laços de repetição while", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp", desc: "Use o while para manter o jogo ativo até o jogador acertar o número secreto." },
+            { icon: "✅", name: "Condicionais em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_conditions.asp", desc: "Aprenda a usar if, elif e else para verificar se o chute é maior, menor ou igual ao número secreto." },
+            { icon: "📦", name: "Variáveis em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_variables.asp", desc: "Entenda como usar variáveis para guardar o número secreto, os chutes e a contagem de tentativas." }
         ]
     },
 
@@ -342,6 +345,7 @@ const PROJECTS = {
         name: "Corrida Maluca",
         diff: "Básico",
         time: "1h30",
+        video: "https://www.youtube.com/embed/HmUIdR62Jd4",
         overview: `
       <p>Três competidores entram na pista. A largada é dada. A cada rodada, cada um avança um número aleatório de posições. Quem cruzar a linha de chegada primeiro vence!</p>
       <p>No <strong>Corrida Maluca</strong>, você vai criar uma simulação de corrida completamente automática no terminal. O usuário acompanha a corrida se desenrolando a cada rodada, vê o progresso de cada competidor e descobre quem venceu ao final.</p>
@@ -451,10 +455,10 @@ const PROJECTS = {
             { q: "Preciso mostrar uma barra visual?", a: "Não é obrigatório, mas é uma das melhorias opcionais mais bem recebidas. Dá uma aparência muito mais profissional ao projeto." }
         ],
         assets: [
-            { icon: "📗", name: "W3Schools — Python For Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_for_loops.asp" },
-            { icon: "📗", name: "W3Schools — Python Lists", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_lists.asp" },
-            { icon: "📗", name: "W3Schools — Python Random Module", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/module_random.asp" },
-            { icon: "📗", name: "W3Schools — Python While Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp" }
+            { icon: "🔁", name: "Laços for em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_for_loops.asp", desc: "Use o for para percorrer todos os competidores e atualizar suas posições a cada rodada." },
+            { icon: "📄", name: "Listas em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_lists.asp", desc: "Armazene os competidores em uma lista para manipulá-los de forma organizada." },
+            { icon: "🎲", name: "Módulo Random em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/module_random.asp", desc: "Gere o avanço aleatório de cada competidor a cada rodada com o módulo random." },
+            { icon: "✅", name: "Laços de repetição while em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp", desc: "Mantenha a corrida em execução com o while até que alguém cruce a linha de chegada." }
         ]
     },
 
@@ -462,6 +466,7 @@ const PROJECTS = {
         name: "Aventura Interativa",
         diff: "Básico",
         time: "1h30",
+        video: "https://www.youtube.com/embed/Xiae8jGNY4w",
         overview: `
       <p>Você já leu um livro onde as suas escolhas mudam a história? Aquele estilo "Se você entrar pela porta da esquerda, vá para a página 42. Se escolher a direita, vá para a página 78."</p>
       <p>No projeto <strong>Aventura Interativa</strong>, você vai criar exatamente isso — mas em Python. Uma história no terminal onde o jogador toma decisões a cada cena, e cada escolha leva a um caminho diferente com finais distintos.</p>
@@ -550,10 +555,10 @@ const PROJECTS = {
             { q: "Posso usar personagens reais?", a: "Evite usar pessoas reais em situações que possam ser inadequadas. Prefira criar personagens fictícios." }
         ],
         assets: [
-            { icon: "📗", name: "W3Schools — Python Conditions (If/Else)", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_conditions.asp" },
-            { icon: "📗", name: "W3Schools — Python Functions", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp" },
-            { icon: "📗", name: "W3Schools — Python User Input", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_user_input.asp" },
-            { icon: "📗", name: "W3Schools — Python While Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp" }
+            { icon: "✅", name: "Condicionais em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_conditions.asp", desc: "Entenda como usar if/elif/else para criar os caminhos e decisões da sua história." },
+            { icon: "📗", name: "Funções em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp", desc: "Crie uma função para cada cena da história e mantenha o código organizado e fácil de expandir." },
+            { icon: "✍️", name: "Inputs em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_user_input.asp", desc: "Aprenda a receber a escolha do jogador com input() e usar o valor para navegar pela história." },
+            { icon: "✅", name: "Laços de repetição while em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp", desc: "Use while para repetir menus de escolha ou para continuar a aventura enquanto o jogador ainda estiver ativo." }
         ]
     },
 
@@ -561,6 +566,7 @@ const PROJECTS = {
         name: "Calculadora Turbo",
         diff: "Básico",
         time: "1h30",
+        video: "https://www.youtube.com/embed/0ArOJ5cxXJU",
         overview: `
       <p>Toda linguagem de programação consegue fazer cálculos. Mas criar uma calculadora <strong>interativa</strong> que funciona em loop, com menu e várias operações, já é outro nível.</p>
       <p>No projeto <strong>Calculadora Turbo</strong>, você vai construir uma calculadora baseada em menu no terminal. O usuário escolhe a operação, digita os números, recebe o resultado — e pode continuar calculando quantas vezes quiser sem precisar reiniciar o programa.</p>
@@ -653,10 +659,10 @@ const PROJECTS = {
             { q: "Como faço para o programa não encerrar após um cálculo?", a: "Use um loop while que só termina quando o usuário escolher a opção 'Sair'. Dentro do loop, você coloca o menu e a lógica de cálculo." }
         ],
         assets: [
-            { icon: "📗", name: "W3Schools — Python Functions", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp" },
-            { icon: "📗", name: "W3Schools — Python Operators", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_operators.asp" },
-            { icon: "📗", name: "W3Schools — Python User Input", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_user_input.asp" },
-            { icon: "📗", name: "W3Schools — Python While Loops", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp" }
+            { icon: "📗", name: "Funções em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_functions.asp", desc: "Veja como criar funções separadas para cada operação da calculadora e organizar bem o código." },
+            { icon: "➕", name: "Operadores em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_operators.asp", desc: "Revise os operadores aritméticos do Python (+, -, *, /) usados em cada operação da calculadora." },
+            { icon: "✍️", name: "Inputs em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_user_input.asp", desc: "Aprenda a capturar a escolha do menu e os números digitados pelo usuário com input()." },
+            { icon: "✅", name: "Laços de repetição while em Python", type: "Tutorial W3Schools", url: "https://www.w3schools.com/python/python_while_loops.asp", desc: "Use o while para manter a calculadora ativa até o usuário escolher a opção de sair." }
         ]
     }
 };
@@ -762,15 +768,18 @@ function loadDocs(key) {
     // 2. Resultado Final Esperado
     document.getElementById('proj-expected').innerHTML = proj.expected;
 
-    // 3. Vídeo Demonstrativo
-    document.getElementById('proj-video').innerHTML = `
-    <div class="video-placeholder">
-      <div class="video-ph-icon">🎬</div>
-      <div class="video-ph-title">Vídeo em breve</div>
-      <div class="video-ph-desc">Em breve, um vídeo mostrando o programa em execução estará disponível aqui. O vídeo vai mostrar o programa sendo executado do início ao fim — com input do usuário, as respostas do programa e o resultado final.</div>
-    </div>
-    <p class="video-caption">📌 Assista ao vídeo com atenção antes de começar. Observe como o programa se comporta, o que ele exibe na tela e como interage com o usuário. O vídeo elimina qualquer dúvida sobre o resultado esperado.</p>
-  `;
+    // 3. Vídeo Demonstrativo — static HTML in DOM, update video source per project
+    const demoVideo = document.getElementById('demo-video');
+    const videoUnavailable = document.getElementById('video-unavailable');
+    if (demoVideo && proj.video) {
+        demoVideo.src = proj.video;
+        demoVideo.style.display = 'block';
+        if (videoUnavailable) videoUnavailable.style.display = 'none';
+    } else if (demoVideo) {
+        demoVideo.removeAttribute('src');
+        demoVideo.style.display = 'none';
+        if (videoUnavailable) videoUnavailable.style.display = 'flex';
+    }
 
     // 4. Fluxo do Programa
     document.getElementById('proj-flow').innerHTML = `
@@ -794,7 +803,23 @@ function loadDocs(key) {
     </div>
   `;
 
-    // 6. Ferramentas Úteis
+    // 6. Assets e Recursos
+    const assetsEl = document.getElementById('proj-assets');
+    if (assetsEl && proj.assets && proj.assets.length > 0) {
+        assetsEl.innerHTML = proj.assets.map(a => `
+            <a class="asset-card" href="${a.url}" target="_blank" rel="noopener">
+                <div class="asset-icon">${a.icon}</div>
+                <div class="asset-info">
+                    <div class="name">${a.name}</div>
+                    <div class="type">${a.type}</div>
+                </div>
+            </a>
+        `).join('');
+    } else if (assetsEl) {
+        assetsEl.innerHTML = `<p class="muted-note">Nenhum recurso adicional para este projeto no momento.</p>`;
+    }
+
+    // 7. Ferramentas Úteis
     if (proj.tools && proj.tools.length > 0) {
         document.getElementById('proj-tools').innerHTML = proj.tools.map(t => `
       <div class="tool-card">
@@ -845,33 +870,7 @@ function loadDocs(key) {
     </div>
   `;
 
-    // 9. Melhorias Opcionais
-    document.getElementById('proj-optional').innerHTML = `
-    <div class="req-tier-label optional-label">🟡 Opcional — não são obrigatórios, mas enriquecem o projeto</div>
-    <div class="req-list">
-      ${proj.optional.map(r => `
-        <div class="req-item optional-item">
-          <div class="req-num opt-num">+</div>
-          <div class="docs-prose"><p>${r}</p></div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-
-    // 10. Bônus
-    document.getElementById('proj-bonus').innerHTML = `
-    <div class="req-tier-label bonus-label">⭐ Bônus — funcionalidades criativas que podem te dar pontos extras</div>
-    <div class="req-list">
-      ${proj.bonus.map(r => `
-        <div class="req-item bonus-item">
-          <div class="req-num bonus-num">★</div>
-          <div class="docs-prose"><p>${r}</p></div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-
-    // 11. Critérios de Avaliação
+    // 9. Critérios de Avaliação
     const total = proj.evaluation.reduce((sum, c) => sum + c.pts, 0);
     document.getElementById('proj-evaluation').innerHTML = `
     <div class="eval-table">
@@ -943,25 +942,8 @@ function loadDocs(key) {
       <div class="faq-body">${f.a}</div>
     </details>
   `).join('');
-
-    // 15. Uso de IA
-    document.getElementById('proj-ai').innerHTML = AI_POLICY_HTML;
-
-    // Assets (used as reference links in sidebar-crit area replacement)
-    // We'll update the sidebar crit section dynamically
-    const critEl = document.querySelector('.sidebar-crit');
-    if (critEl) {
-        critEl.innerHTML = `
-      <h4>Links de Apoio</h4>
-      ${proj.assets.map(a => `
-        <div class="crit-item">
-          <div class="crit-dot"></div>
-          <a href="${a.url}" target="_blank" rel="noopener" style="color: var(--mint-dkr); font-size: .8rem;">${a.name}</a>
-        </div>
-      `).join('')}
-    `;
-    }
 }
+
 
 function backToProjects() {
     showScreen('screen-projects');
@@ -980,7 +962,7 @@ function scrollToSection(id) {
 }
 
 // Active sidebar nav on scroll
-const sectionIds = ['s-overview', 's-expected', 's-video', 's-flow', 's-concepts', 's-tools', 's-modules', 's-mandatory', 's-optional', 's-bonus', 's-evaluation', 's-structure', 's-mistakes', 's-faq', 's-ai', 's-submit'];
+const sectionIds = ['s-overview', 's-expected', 's-video', 's-flow', 's-concepts', 's-assets', 's-tools', 's-modules', 's-mandatory', 's-evaluation', 's-structure', 's-mistakes', 's-faq', 's-submit'];
 const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
 
 window.addEventListener('scroll', () => {

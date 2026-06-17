@@ -20,7 +20,7 @@
             <div class="nav-logo">
                 <img src="../img/nav-logo.svg" alt="Hello Python">
             </div>
-            <div class="nav-badge" id="nav-status">Portal do Aluno</div>
+            <div class="nav-badge" id="nav-status">Portal de Projetos</div>
         </div>
     </nav>
 
@@ -28,7 +28,7 @@
         <div class="login-card">
             <div class="login-emoji">🔐</div>
             <h1>Portal de Projetos</h1>
-            <p>Digite a senha de acesso fornecida pelo seu instrutor para visualizar e selecionar seu projeto.</p>
+            <p>Digite a senha de acesso fornecida pelo seu instrutor para visualizar e selecionar seu projeto final.</p>
 
             <div class="error-msg" id="login-error">
                 Senha incorreta. Tente novamente.
@@ -224,36 +224,21 @@
                         <nav class="sidebar-nav" id="sidebar-nav">
                             <a onclick="scrollToSection('s-overview')" class="active">📋 Visão Geral</a>
                             <a onclick="scrollToSection('s-expected')">🎯 Resultado Final</a>
-                            <a onclick="scrollToSection('s-video')">🎬 Vídeo Demo</a>
+                            <a onclick="scrollToSection('s-video')">🎬 Vídeo</a>
                             <a onclick="scrollToSection('s-flow')">🔄 Fluxo do Programa</a>
                             <a onclick="scrollToSection('s-concepts')">🧠 Conceitos</a>
+                            <a onclick="scrollToSection('s-assets')">🔗 Assets e Recursos</a>
                             <a onclick="scrollToSection('s-tools')">🛠 Ferramentas</a>
                             <a onclick="scrollToSection('s-modules')">📦 Módulos</a>
                             <a onclick="scrollToSection('s-mandatory')">🟢 Obrigatórios</a>
-                            <a onclick="scrollToSection('s-optional')">🟡 Opcionais</a>
-                            <a onclick="scrollToSection('s-bonus')">⭐ Bônus</a>
                             <a onclick="scrollToSection('s-evaluation')">🏆 Avaliação</a>
                             <a onclick="scrollToSection('s-structure')">🗂 Estrutura</a>
                             <a onclick="scrollToSection('s-mistakes')">⚠️ Erros Comuns</a>
                             <a onclick="scrollToSection('s-faq')">❓ FAQ</a>
-                            <a onclick="scrollToSection('s-ai')">🤖 Uso de IA</a>
                             <a onclick="scrollToSection('s-submit')">🚀 Entrega</a>
                         </nav>
 
-                        <div class="sidebar-divider"></div>
 
-                        <div class="sidebar-crit">
-                            <h4>Critérios de Avaliação</h4>
-                            <div class="crit-item">
-                                <div class="crit-dot"></div>Todos os requisitos implementados
-                            </div>
-                            <div class="crit-item">
-                                <div class="crit-dot"></div>Código legível e organizado
-                            </div>
-                            <div class="crit-item">
-                                <div class="crit-dot"></div>Erros e entradas inválidas tratados
-                            </div>
-                        </div>
                     </div>
                 </div>
             </aside>
@@ -271,7 +256,27 @@
 
                 <section class="docs-section" id="s-video">
                     <h2><span class="section-icon">🎬</span> Vídeo Demonstrativo</h2>
-                    <div id="proj-video"></div>
+                    <div id="proj-video">
+                        <div class="video-embed-wrap">
+                            <div class="video-embed-inner">
+                                <iframe id="demo-video" class="demo-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <div class="video-unavailable" id="video-unavailable">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <polygon points="23 7 16 12 23 17 23 7" />
+                                        <rect width="15" height="14" x="1" y="5" rx="2" ry="2" />
+                                    </svg>
+                                    <span class="video-unavailable-title">Vídeo em breve</span>
+                                    <span class="video-unavailable-desc">O vídeo demonstrativo estará disponível em
+                                        breve. Ele mostrará o programa sendo executado no terminal do início ao
+                                        fim.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="video-caption">Assista ao vídeo antes de começar. Observe como o programa se comporta,
+                            o que é exibido em cada etapa e como ele interage com o usuário.</p>
+                    </div>
                 </section>
 
                 <section class="docs-section" id="s-flow">
@@ -282,6 +287,11 @@
                 <section class="docs-section" id="s-concepts">
                     <h2><span class="section-icon">🧠</span> Conceitos que você provavelmente utilizará</h2>
                     <div id="proj-concepts"></div>
+                </section>
+
+                <section class="docs-section" id="s-assets">
+                    <h2><span class="section-icon">🔗</span> Assets e Recursos</h2>
+                    <div class="assets-grid" id="proj-assets"></div>
                 </section>
 
                 <section class="docs-section" id="s-tools">
@@ -297,16 +307,6 @@
                 <section class="docs-section" id="s-mandatory">
                     <h2><span class="section-icon">🟢</span> Requisitos Obrigatórios</h2>
                     <div id="proj-mandatory"></div>
-                </section>
-
-                <section class="docs-section" id="s-optional">
-                    <h2><span class="section-icon">🟡</span> Melhorias Opcionais</h2>
-                    <div id="proj-optional"></div>
-                </section>
-
-                <section class="docs-section" id="s-bonus">
-                    <h2><span class="section-icon">⭐</span> Funcionalidades Bônus</h2>
-                    <div id="proj-bonus"></div>
                 </section>
 
                 <section class="docs-section" id="s-evaluation">
@@ -329,10 +329,7 @@
                     <div class="faq-list" id="proj-faq"></div>
                 </section>
 
-                <section class="docs-section" id="s-ai">
-                    <h2><span class="section-icon">🤖</span> Uso de Inteligência Artificial</h2>
-                    <div id="proj-ai"></div>
-                </section>
+
 
                 <section class="docs-section" id="s-submit">
                     <h2><span class="section-icon">🚀</span> Entrega do Projeto</h2>
@@ -382,9 +379,10 @@
 
                             <ol class="delivery-steps">
                                 <li>Compacte seu projeto em um arquivo <code>.zip</code></li>
-                                <li>Verifique se todos os arquivos necessários estão incluídos</li>
+                                <li><b>(Botão direito na pasta ➞ Compactar para ➞ Arquivo ZIP)</b></li>
                                 <li>Abra seu aplicativo de e-mail</li>
                                 <li>Anexe o arquivo <code>.zip</code></li>
+                                <li>Informe seu nome completo + projeto escolhido</li>
                                 <li>Envie para o e-mail oficial do curso</li>
                             </ol>
 
@@ -427,8 +425,9 @@
 
                             <ol class="delivery-steps">
                                 <li>Compacte seu projeto em um arquivo <code>.zip</code></li>
+                                <li><b>(Botão direito na pasta ➞ Compactar para ➞ Arquivo ZIP)</b></li>
                                 <li>Abra a conversa do WhatsApp</li>
-                                <li>Envie o arquivo</li>
+                                <li>Envie o arquivo no nosso grupo do WhatsApp</li>
                                 <li>Informe seu nome completo</li>
                                 <li>Informe o projeto escolhido</li>
                             </ol>
@@ -514,7 +513,7 @@
             <h2>Confirmar Projeto</h2>
             <p>Você está prestes a selecionar <strong id="modal-proj-name">...</strong> como seu projeto de exame.</p>
             <div class="modal-warning">
-                ⚠️ <strong>Este é seu projeto final.</strong> Tenha certeza da sua escolha antes de prosseguir.
+                <strong>Este é seu projeto final.</strong> Tenha certeza da sua escolha antes de prosseguir.
             </div>
             <div class="modal-actions">
                 <button class="btn-outline" onclick="closeModal()">Voltar</button>
