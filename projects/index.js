@@ -961,10 +961,6 @@ function loadDocs(key) {
       `).join('')}
     `;
     }
-
-    document.getElementById('submit-success').classList.remove('visible');
-    document.getElementById('sub-github').value = '';
-    document.getElementById('sub-notes').value = '';
 }
 
 function backToProjects() {
@@ -998,16 +994,3 @@ window.addEventListener('scroll', () => {
         a.classList.toggle('active', sectionIds[i] === current);
     });
 }, { passive: true });
-
-// ─── SUBMISSION ──────────────────────────────────────────
-function submitProject() {
-    const github = document.getElementById('sub-github').value.trim();
-    if (!github) {
-        document.getElementById('sub-github').focus();
-        document.getElementById('sub-github').style.borderColor = '#e05252';
-        setTimeout(() => document.getElementById('sub-github').style.borderColor = '', 2000);
-        return;
-    }
-    document.getElementById('submit-success').classList.add('visible');
-    document.getElementById('submit-success').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}

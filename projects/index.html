@@ -31,12 +31,12 @@
             <p>Digite a senha de acesso fornecida pelo seu instrutor para visualizar e selecionar seu projeto.</p>
 
             <div class="error-msg" id="login-error">
-                <span>⚠️</span> Senha incorreta. Tente novamente.
+                Senha incorreta. Tente novamente.
             </div>
 
             <div class="field-wrap">
                 <label for="pwd-input">Senha</label>
-                <input class="field-input" id="pwd-input" type="password" placeholder="Digite sua senha de acesso"
+                <input class="field-input" id="pwd-input" type="password" placeholder="Digite a senha"
                     autocomplete="current-password" />
             </div>
 
@@ -44,7 +44,7 @@
                 Acessar Projetos →
             </button>
 
-            <p class="login-hint">Esqueceu sua senha? Fale com seu instrutor no Discord.</p>
+            <p class="login-hint">Esqueceu sua senha? Fale com seu instrutor.</p>
         </div>
     </main>
 
@@ -215,7 +215,7 @@
                             </div>
                             <div class="sidebar-meta-row">
                                 <span class="label">Entrega</span>
-                                <span class="val">URL do GitHub</span>
+                                <span class="val">E-mail ou WhatsApp</span>
                             </div>
                         </div>
 
@@ -335,26 +335,174 @@
                 </section>
 
                 <section class="docs-section" id="s-submit">
-                    <h2><span class="section-icon">🚀</span> Entrega</h2>
-                    <div class="submit-card">
-                        <h2>Envie seu projeto</h2>
-                        <div class="form-group">
-                            <label class="form-label">URL do Repositório GitHub <span>*</span></label>
-                            <input class="form-input" id="sub-github" type="url"
-                                placeholder="https://github.com/usuario/projeto" />
+                    <h2><span class="section-icon">🚀</span> Entrega do Projeto</h2>
+
+                    <div class="delivery-grid">
+
+                        <!-- GMAIL CARD -->
+                        <div class="delivery-card delivery-card--featured">
+                            <div class="delivery-card-top">
+                                <div class="delivery-icon-wrap">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                </div>
+                                <span class="delivery-badge">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path
+                                            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+                                        <path d="m9 12 2 2 4-4" />
+                                    </svg>
+                                    Método Recomendado
+                                </span>
+                            </div>
+
+                            <div class="delivery-card-heading">
+                                <p class="delivery-channel-label">Envio por</p>
+                                <h3 class="delivery-card-title">Gmail</h3>
+                            </div>
+
+                            <p class="delivery-card-desc">Envie um arquivo <code>.zip</code> contendo todo o seu projeto
+                                para o e-mail oficial do curso.</p>
+
+                            <div class="delivery-email-row">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                <span>hellopython.ucb@gmail.com</span>
+                            </div>
+
+                            <ol class="delivery-steps">
+                                <li>Compacte seu projeto em um arquivo <code>.zip</code></li>
+                                <li>Verifique se todos os arquivos necessários estão incluídos</li>
+                                <li>Abra seu aplicativo de e-mail</li>
+                                <li>Anexe o arquivo <code>.zip</code></li>
+                                <li>Envie para o e-mail oficial do curso</li>
+                            </ol>
+
+                            <a class="btn-primary delivery-btn"
+                                href="mailto:hellopython.ucb@gmail.com?subject=[PROVA]%20Nome%20do%20Aluno%20-%20Nome%20do%20Projeto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m22 2-7 20-4-9-9-4Z" />
+                                    <path d="M22 2 11 13" />
+                                </svg>
+                                Abrir Gmail
+                            </a>
+
+                            <div class="delivery-notes">
+                                <p>Certifique-se de anexar o arquivo <code>.zip</code> antes de enviar.</p>
+                                <p>Mais fácil de organizar e corrigir.</p>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Notas Adicionais</label>
-                            <textarea class="form-input" id="sub-notes"
-                                placeholder="Qualquer coisa que o instrutor deva saber..."></textarea>
+
+                        <!-- WHATSAPP CARD -->
+                        <div class="delivery-card">
+                            <div class="delivery-card-top">
+                                <div class="delivery-icon-wrap delivery-icon-wrap--wa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="delivery-card-heading">
+                                <p class="delivery-channel-label">Envio pelo</p>
+                                <h3 class="delivery-card-title">WhatsApp</h3>
+                            </div>
+
+                            <p class="delivery-card-desc">Caso tenha dificuldades para enviar por e-mail, você pode
+                                enviar o arquivo <code>.zip</code> pelo WhatsApp.</p>
+
+                            <ol class="delivery-steps">
+                                <li>Compacte seu projeto em um arquivo <code>.zip</code></li>
+                                <li>Abra a conversa do WhatsApp</li>
+                                <li>Envie o arquivo</li>
+                                <li>Informe seu nome completo</li>
+                                <li>Informe o projeto escolhido</li>
+                            </ol>
+
+                            <a class="btn-outline delivery-btn delivery-btn--wa" href="https://web.whatsapp.com/"
+                                target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                                </svg>
+                                Abrir WhatsApp
+                            </a>
+
+                            <div class="delivery-notes delivery-notes--alt">
+                                <p>Envie também seu nome completo e o nome do projeto escolhido.</p>
+                                <p>Utilize esta opção apenas caso tenha dificuldades com o envio por e-mail.</p>
+                            </div>
                         </div>
-                        <div class="submit-footer">
-                            <button class="btn-primary" onclick="submitProject()">Enviar Projeto →</button>
+
+                    </div>
+
+                    <!-- PRE-SUBMISSION CHECKLIST -->
+                    <div class="delivery-checklist">
+                        <div class="delivery-checklist-header">
+                            <div class="delivery-checklist-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <path d="m9 11 3 3L22 4" />
+                                </svg>
+                            </div>
+                            <span class="delivery-checklist-title">Antes de Enviar</span>
                         </div>
-                        <div class="submit-success" id="submit-success">
-                            🎉 Projeto enviado com sucesso!
+                        <div class="delivery-checklist-grid">
+                            <label class="check-item">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Meu código está funcionando corretamente</span>
+                            </label>
+                            <label class="check-item">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Todos os arquivos do projeto estão incluídos</span>
+                            </label>
+                            <label class="check-item">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Compactei a pasta em um arquivo .zip</span>
+                            </label>
+                            <label class="check-item">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Informei meu nome completo</span>
+                            </label>
+                            <label class="check-item">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Informei qual projeto escolhi</span>
+                            </label>
+                            <label class="check-item">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Testei o programa antes de enviar</span>
+                            </label>
+                            <label class="check-item check-item--full">
+                                <input type="checkbox" class="check-input">
+                                <span class="check-box-visual"></span>
+                                <span class="check-label">Não enviei arquivos desnecessários</span>
+                            </label>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>
