@@ -61,7 +61,7 @@
             <div class="proj-card fade-in" data-proj="arena">
                 <div class="proj-card-top">
                     <div class="proj-emoji">⚔️</div>
-                    <div class="diff-badge diff-beginner">Beginner</div>
+                    <div class="diff-badge diff-beginner">Básico</div>
                 </div>
                 <h3>Arena de Monstros</h3>
                 <p class="proj-desc">Um sistema de batalha interativo no terminal onde o jogador enfrenta monstros e
@@ -81,7 +81,7 @@
             <div class="proj-card fade-in" data-proj="quiz">
                 <div class="proj-card-top">
                     <div class="proj-emoji">🧠</div>
-                    <div class="diff-badge diff-beginner">Beginner</div>
+                    <div class="diff-badge diff-beginner">Básico</div>
                 </div>
                 <h3>Quiz Personalizado</h3>
                 <p class="proj-desc">Crie um jogo de perguntas e respostas sobre um tema da sua escolha, armazenando
@@ -101,7 +101,7 @@
             <div class="proj-card fade-in" data-proj="sorte">
                 <div class="proj-card-top">
                     <div class="proj-emoji">🎲</div>
-                    <div class="diff-badge diff-beginner">Beginner</div>
+                    <div class="diff-badge diff-beginner">Básico</div>
                 </div>
                 <h3>Mestre da Sorte</h3>
                 <p class="proj-desc">Um jogo de adivinhação onde o computador escolhe um número secreto e fornece dicas
@@ -121,7 +121,7 @@
             <div class="proj-card fade-in" data-proj="corrida">
                 <div class="proj-card-top">
                     <div class="proj-emoji">🏁</div>
-                    <div class="diff-badge diff-beginner">Beginner</div>
+                    <div class="diff-badge diff-beginner">Básico</div>
                 </div>
                 <h3>Corrida Maluca</h3>
                 <p class="proj-desc">Simule uma corrida automática no terminal onde competidores disputam posições
@@ -141,7 +141,7 @@
             <div class="proj-card fade-in" data-proj="aventura">
                 <div class="proj-card-top">
                     <div class="proj-emoji">📖</div>
-                    <div class="diff-badge diff-beginner">Beginner</div>
+                    <div class="diff-badge diff-beginner">Básico</div>
                 </div>
                 <h3>Aventura Interativa</h3>
                 <p class="proj-desc">Crie uma história no estilo "Escolha sua própria aventura", onde as decisões do
@@ -161,7 +161,7 @@
             <div class="proj-card fade-in" data-proj="calculadora">
                 <div class="proj-card-top">
                     <div class="proj-emoji">➗</div>
-                    <div class="diff-badge diff-beginner">Beginner</div>
+                    <div class="diff-badge diff-beginner">Básico</div>
                 </div>
                 <h3>Calculadora Turbo</h3>
                 <p class="proj-desc">Desenvolva uma calculadora interativa baseada em um menu que realiza operações
@@ -223,12 +223,20 @@
 
                         <nav class="sidebar-nav" id="sidebar-nav">
                             <a onclick="scrollToSection('s-overview')" class="active">📋 Visão Geral</a>
-                            <a onclick="scrollToSection('s-requirements')">✅ Requisitos</a>
-                            <a onclick="scrollToSection('s-rules')">📏 Regras de Negócio</a>
-                            <a onclick="scrollToSection('s-criteria')">🏆 Critérios de Aceite</a>
-                            <a onclick="scrollToSection('s-assets')">🗂 Assets & Links</a>
-                            <a onclick="scrollToSection('s-hints')">💡 Dicas</a>
+                            <a onclick="scrollToSection('s-expected')">🎯 Resultado Final</a>
+                            <a onclick="scrollToSection('s-video')">🎬 Vídeo Demo</a>
+                            <a onclick="scrollToSection('s-flow')">🔄 Fluxo do Programa</a>
+                            <a onclick="scrollToSection('s-concepts')">🧠 Conceitos</a>
+                            <a onclick="scrollToSection('s-tools')">🛠 Ferramentas</a>
+                            <a onclick="scrollToSection('s-modules')">📦 Módulos</a>
+                            <a onclick="scrollToSection('s-mandatory')">🟢 Obrigatórios</a>
+                            <a onclick="scrollToSection('s-optional')">🟡 Opcionais</a>
+                            <a onclick="scrollToSection('s-bonus')">⭐ Bônus</a>
+                            <a onclick="scrollToSection('s-evaluation')">🏆 Avaliação</a>
+                            <a onclick="scrollToSection('s-structure')">🗂 Estrutura</a>
+                            <a onclick="scrollToSection('s-mistakes')">⚠️ Erros Comuns</a>
                             <a onclick="scrollToSection('s-faq')">❓ FAQ</a>
+                            <a onclick="scrollToSection('s-ai')">🤖 Uso de IA</a>
                             <a onclick="scrollToSection('s-submit')">🚀 Entrega</a>
                         </nav>
 
@@ -256,34 +264,74 @@
                     <div class="docs-prose" id="proj-overview"></div>
                 </section>
 
-                <section class="docs-section" id="s-requirements">
-                    <h2><span class="section-icon">✅</span> Requisitos Funcionais</h2>
-                    <div class="req-list" id="proj-requirements"></div>
+                <section class="docs-section" id="s-expected">
+                    <h2><span class="section-icon">🎯</span> Resultado Final Esperado</h2>
+                    <div class="docs-prose" id="proj-expected"></div>
                 </section>
 
-                <section class="docs-section" id="s-rules">
-                    <h2><span class="section-icon">📏</span> Regras de Negócio</h2>
-                    <div class="rules-grid" id="proj-rules"></div>
+                <section class="docs-section" id="s-video">
+                    <h2><span class="section-icon">🎬</span> Vídeo Demonstrativo</h2>
+                    <div id="proj-video"></div>
                 </section>
 
-                <section class="docs-section" id="s-criteria">
-                    <h2><span class="section-icon">🏆</span> Critérios de Aceite</h2>
-                    <div class="criteria-list" id="proj-criteria"></div>
+                <section class="docs-section" id="s-flow">
+                    <h2><span class="section-icon">🔄</span> O que acontece quando o programa é executado?</h2>
+                    <div id="proj-flow"></div>
                 </section>
 
-                <section class="docs-section" id="s-assets">
-                    <h2><span class="section-icon">🗂</span> Assets & Recursos</h2>
-                    <div class="assets-grid" id="proj-assets"></div>
+                <section class="docs-section" id="s-concepts">
+                    <h2><span class="section-icon">🧠</span> Conceitos que você provavelmente utilizará</h2>
+                    <div id="proj-concepts"></div>
                 </section>
 
-                <section class="docs-section" id="s-hints">
-                    <h2><span class="section-icon">💡</span> Dicas</h2>
-                    <div id="proj-hints"></div>
+                <section class="docs-section" id="s-tools">
+                    <h2><span class="section-icon">🛠</span> Ferramentas Úteis Para Este Projeto</h2>
+                    <div id="proj-tools"></div>
+                </section>
+
+                <section class="docs-section" id="s-modules">
+                    <h2><span class="section-icon">📦</span> Módulos Utilizados</h2>
+                    <div id="proj-modules"></div>
+                </section>
+
+                <section class="docs-section" id="s-mandatory">
+                    <h2><span class="section-icon">🟢</span> Requisitos Obrigatórios</h2>
+                    <div id="proj-mandatory"></div>
+                </section>
+
+                <section class="docs-section" id="s-optional">
+                    <h2><span class="section-icon">🟡</span> Melhorias Opcionais</h2>
+                    <div id="proj-optional"></div>
+                </section>
+
+                <section class="docs-section" id="s-bonus">
+                    <h2><span class="section-icon">⭐</span> Funcionalidades Bônus</h2>
+                    <div id="proj-bonus"></div>
+                </section>
+
+                <section class="docs-section" id="s-evaluation">
+                    <h2><span class="section-icon">🏆</span> Critérios de Avaliação</h2>
+                    <div id="proj-evaluation"></div>
+                </section>
+
+                <section class="docs-section" id="s-structure">
+                    <h2><span class="section-icon">🗂</span> Estrutura Sugerida</h2>
+                    <div id="proj-structure"></div>
+                </section>
+
+                <section class="docs-section" id="s-mistakes">
+                    <h2><span class="section-icon">⚠️</span> Erros Comuns</h2>
+                    <div id="proj-mistakes"></div>
                 </section>
 
                 <section class="docs-section" id="s-faq">
-                    <h2><span class="section-icon">❓</span> FAQ</h2>
+                    <h2><span class="section-icon">❓</span> Perguntas Frequentes</h2>
                     <div class="faq-list" id="proj-faq"></div>
+                </section>
+
+                <section class="docs-section" id="s-ai">
+                    <h2><span class="section-icon">🤖</span> Uso de Inteligência Artificial</h2>
+                    <div id="proj-ai"></div>
                 </section>
 
                 <section class="docs-section" id="s-submit">
